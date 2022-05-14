@@ -11,12 +11,16 @@ python>=3.6
 ```
 
 ## How to execute this project
-Execute the following command to install project dependencies: \n
+Execute the following command to install project dependencies:
+
 ```pip3 install -r requirements.txt```
 
-After finishing the dependencies install, execute the `create_tables.py` to initialize sparkify database and _songs_, _artists_, _time_, _users_ and _songplays_ tables: \n
+After finishing the dependencies install, execute the `create_tables.py` to initialize sparkify database and _songs_, _artists_, _time_, _users_ and _songplays_ tables:
+
 ```python3 create_tables.py```
 
-At least, execute `etl.py` to run the etl pipeline: \n
+At least, execute `etl.py` to run the etl pipeline:
+
+
 ```python3 etl.py```
 
