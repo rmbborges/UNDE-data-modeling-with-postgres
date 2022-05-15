@@ -12,10 +12,10 @@ songplay_table_create = ("""
     CREATE TABLE IF NOT EXISTS songplays (
         songplay_id SERIAL PRIMARY KEY, 
         start_time TIMESTAMP, 
-        user_id INT NOT NULL, 
+        user_id INT NOT NULL REFERENCES users(user_id), 
         level VARCHAR, 
-        song_id VARCHAR, 
-        artist_id VARCHAR, 
+        song_id VARCHAR REFERENCES songs(song_id), 
+        artist_id VARCHAR REFERENCES artists(artist_id), 
         session_id VARCHAR, 
         location VARCHAR, 
         user_agent VARCHAR
@@ -36,7 +36,7 @@ song_table_create = ("""
     CREATE TABLE IF NOT EXISTS songs (
         song_id VARCHAR PRIMARY KEY,
         title VARCHAR NOT NULL,
-        artist_id VARCHAR NOT NULL, 
+        artist_id VARCHAR NOT NULL REFERENCES artists(artist_id), 
         year INT, 
         duration NUMERIC
     );
